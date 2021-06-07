@@ -21,7 +21,7 @@ public class MeetupController {
 		return meetupDao.findAll();
 	}
 	
-	@GetMapping("/participants/{id}")
+	@GetMapping("/meetups/{id}")
 	public Meetup meetups(@PathVariable int id){
 		return meetupDao.findById(id).get();
 	}
