@@ -5,7 +5,7 @@
 
 <div class="main-container">
   <div class="heading-container">
-    <h1 class="heading">Reasons why <span class="heading-bold">RideAlong</span>  is the Right Choice</h1>
+    <h1 class="heading header-h1">Reasons why <span class="heading-bold">RideAlong</span>  is the Right Choice</h1>
   </div>
   <div class="about-card-container">
     <div class="about-card about-card-1">

@@ -7,7 +7,7 @@
 	import Footer from "./Footer/Footer.svelte"
 </script>
 
-<main>
+<main class="homepage-main">
 	<Header />
 	<Screens />
 	<About />

@@ -1,0 +1,110 @@
+.dashboard-main {
+    height: 100vh;
+    display: flex;
+    background-color: rgb(245, 245, 245);
+    text-align: center;
+    overflow-y: scroll;
+}
+
+.dashboard-options-container {
+    background-color: #fafafa;
+    width: 300px;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    border-right: solid 3px #f0bc4cf1;
+    overflow: hidden;
+    position: fixed;
+}
+
+.dashboard-h1 {
+    font-size: 3rem !important;
+    color: #fafafa;
+    background-color: #f0bc4cf1;
+    padding: 1rem;
+    margin: 0 !important;
+}
+
+.dashboard-hr {
+    background-color: #f0bc4cf1;
+    height: 3px;
+    border-width: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.dashboard-h3 {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    color: rgb(98, 100, 102);
+}
+
+.dashboard-options {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.dashboard-options li {
+    margin: 20px;
+    width: 100%;
+    color: #f0bc4cf1;
+    font-family: "Nunito", sans-serif;
+    font-weight: bolder;
+    font-size: 1.3rem;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.dashboard-options li.dashboard-li-active {
+    color: #f07713f1;
+}
+
+.dashboard-view {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.dashboard-view-header {
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+.dashboard-view-header-title {
+    background-color: #f0bc4cf1;
+    padding: 1rem;
+    margin: 1rem;
+    margin-left: calc(1rem + 300px);
+    border-radius: 15px;
+    color: rgb(245, 241, 241);
+    flex: 3;
+}
+
+.dashboard-view-header-add {
+    background-color: #f07713f1;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 15px;
+    color: white;
+    flex: 1;
+    cursor: pointer;
+}
+
+.dashboard-view ul.dashboard-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}

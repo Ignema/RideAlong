@@ -2,7 +2,7 @@
     import './Pictures.css'
 </script>
 
-    <h1 class="pictures-heading">Discover a New Experience</h1>
+    <h1 class="pictures-heading header-h1">Discover a New Experience</h1>
 
   <div class="gallery-image">
     <div class="img-box">

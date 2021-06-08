@@ -1,0 +1,21 @@
+.dashboard-bike-card {
+    background-image: url("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cannondale-supersix-evo-2020-0031-1564587168.jpg");
+    background-attachment: fixed;
+}
+
+.dashboard-bike-overlay {
+    height: 100%;
+    opacity: .2;
+    background-color: rgb(236, 176, 44);
+}
+
+.dashboard-bike-rent {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 2rem;
+    padding: 1rem;
+    border-radius: 20px;
+    background-color: rgb(236, 176, 44);
+    cursor: pointer;
+}
