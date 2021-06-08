@@ -28,7 +28,10 @@ public class Participant {
     @Column(name = "birthday", nullable = false, columnDefinition = "DATE")
     private LocalDate birthday;
 
+    @Column(name = "password", nullable = false, columnDefinition = "TEXT")
+    private String password;
+
     @OneToOne
-    @JoinColumn(name = "message_id")
+    @JoinColumn(name = "bicycle_id")
     private Bicycle bicycle;
 }
