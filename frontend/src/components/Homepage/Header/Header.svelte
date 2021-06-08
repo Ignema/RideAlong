@@ -16,6 +16,6 @@
         <br>
         <button class="main-button">MEET UP</button>
         <button>RENT A BICYCLE</button>
-        <button>LEARN MORE</button>
+        <a href="#/about"><button>LEARN MORE</button></a>
 	</div>
 </header>
