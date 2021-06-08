@@ -32,8 +32,17 @@ public class ParticipantController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "participant not found");
     }
 
+    @GetMapping("/login")
+    public Participant getPartipantByEmailPASS(@RequestBody Participant participant) {
+        Participant participant1 = participantDAO.getParticipantByEmailAndPassword(participant.getEmail(),participant.getPassword());
+        if(participant1!=null)return participant1;
+        else throw new ResponseStatusException(HttpStatus.NOT_FOUND, "participant not found");
+    }
+
     @PostMapping("/participant")
     public Participant insertParticipant(@RequestBody Participant participant) {
+
+        participant.setPassword(""+participant.getPassword().hashCode());
         return participantDAO.save(participant);
     }
 
