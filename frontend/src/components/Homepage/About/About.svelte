@@ -11,38 +11,22 @@
     <div class="about-card about-card-1">
       <div class="about-card__icon"><i class="fas fa-bolt"></i></div>
       <p class="about-card__exit"><i class="fas fa-times"></i></p>
-      <h2 class="about-card__title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
-      <p class="about-card__apply"><a href="#">Apply Now <i class="fas fa-arrow-right"></i></a></p>
+      <h2 class="about-card__title"><span style="font-weight: bolder;">Free and Opensource:</span> This project is purely to give back to our community of people like you</h2>
     </div>
     <div class="about-card about-card-2">
       <div class="about-card__icon"><i class="fas fa-bolt"></i></div>
       <p class="about-card__exit"><i class="fas fa-times"></i></p>
-      <h2 class="about-card__title">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h2>
-      <p class="about-card__apply"><a href="#">Apply Now <i class="fas fa-arrow-right"></i></a></p>
+      <h2 class="about-card__title"><span style="font-weight: bolder;">Easy and Intuitive:</span> We focused mainly on simplicity in order to optimize the time you spend in this application</h2>
     </div>
     <div class="about-card about-card-3">
       <div class="about-card__icon"><i class="fas fa-bolt"></i></div>
       <p class="about-card__exit"><i class="fas fa-times"></i></p>
-      <h2 class="about-card__title">Ut enim ad minim veniam.</h2>
-      <p class="about-card__apply"><a href="#">Apply Now <i class="fas fa-arrow-right"></i></a></p>
+      <h2 class="about-card__title"><span style="font-weight: bolder;">Fun and Engaging:</span> Cycling with others is one of the most fun and liberating experiences you can feel. We want you to feel that too.</h2>
     </div>
     <div class="about-card about-card-4">
       <div class="about-card__icon"><i class="fas fa-bolt"></i></div>
       <p class="about-card__exit"><i class="fas fa-times"></i></p>
-      <h2 class="about-card__title">Quis nostrud exercitation ullamco laboris nisi.</h2>
-      <p class="about-card__apply"><a href="#">Apply Now <i class="fas fa-arrow-right"></i></a></p>
-    </div>
-    <div class="about-card about-card-5">
-      <div class="about-card__icon"><i class="fas fa-bolt"></i></div>
-      <p class="about-card__exit"><i class="fas fa-times"></i></p>
-      <h2 class="about-card__title">Ut aliquip ex ea commodo consequat. Duis aute irure dolor.</h2>
-      <p class="about-card__apply"><a href="#">Apply Now <i class="fas fa-arrow-right"></i></a></p>
-    </div>
-    <div class="about-card about-card-1">
-      <div class="about-card__icon"><i class="fas fa-bolt"></i></div>
-      <p class="about-card__exit"><i class="fas fa-times"></i></p>
-      <h2 class="about-card__title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
-      <p class="about-card__apply"><a href="#">Apply Now <i class="fas fa-arrow-right"></i></a></p>
+      <h2 class="about-card__title"><span style="font-weight: bolder;">Friendly and Social:</span> One of the easiest ways of making friends is sharing the same interests. Find new friends with us here in RideAlong!</h2>
     </div>
   </div>
 </div>

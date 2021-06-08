@@ -46,6 +46,7 @@ a:hover::after {
 
 .main-container {
     padding: 10px 30px 30px 30px;
+    font-family: "Nunito";
 }
 
 .about-card-container {
@@ -93,19 +94,23 @@ a:hover::after {
 }
 
 .about-card-1 {
-    background: radial-gradient(#1fe4f5, #3fbafe);
+    /* background: radial-gradient(#1fe4f5, #3fbafe); */
+    background-color: #1fe4f5;
 }
 
 .about-card-2 {
-    background: radial-gradient(#fbc1cc, #fa99b2);
+    /* background: radial-gradient(#fbc1cc, #fa99b2); */
+    background-color: #fbc1cc;
 }
 
 .about-card-3 {
-    background: radial-gradient(#76b2fe, #b69efe);
+    /* background: radial-gradient(#76b2fe, #b69efe); */
+    background-color: #b69efe;
 }
 
 .about-card-4 {
-    background: radial-gradient(#60efbc, #58d5c9);
+    /* background: radial-gradient(#60efbc, #58d5c9); */
+    background-color: #60efbc;
 }
 
 .about-card-5 {

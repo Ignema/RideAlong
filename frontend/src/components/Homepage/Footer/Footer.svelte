@@ -13,7 +13,8 @@
           <p>Medium</p>
       </section>
       <section>
-          <img src="" alt="LOGO">
+          <!-- <img src="" alt="LOGO"> -->
+          <h1>RIDEALONG</h1>
           <p>Copyright &copy; 2021 RideAlong</p>
       </section>
 </footer>

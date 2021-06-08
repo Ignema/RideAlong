@@ -48,7 +48,7 @@
     display: flex;
     align-items: center;
     gap: 2em;
-    padding: 2em;
+    padding: 1em;
     border-radius: calc(var(--curve) * 1px) 0 0 0;
     background-color: var(--surface-color);
     transform: translateY(-100%);
