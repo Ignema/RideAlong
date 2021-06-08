@@ -31,17 +31,4 @@ public class Participant {
     @OneToOne
     @JoinColumn(name = "message_id")
     private Bicycle bicycle;
-
-    @ManyToMany
-    @JoinTable(name = "participant_meetup", joinColumns = @JoinColumn(name = "participant_id"), inverseJoinColumns = @JoinColumn(name = "meetup_id"))
-    @Column(name = "meetups")
-    private List<Meetup> meetups;
-
-    @OneToMany(mappedBy = "organizer")
-    @Column(name = "organized_meetups")
-    private List<Meetup> organized_meetups;
-
-    @OneToMany(mappedBy = "owner")
-    @Column(name = "owned_bicycles")
-    private List<Bicycle> bicycles;
 }

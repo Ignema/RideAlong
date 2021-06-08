@@ -20,8 +20,4 @@ public class Message {
 
     @Column(name = "date", nullable = false, columnDefinition = "TIMESTAMP")
     private LocalDateTime date;
-
-    @ManyToOne
-    @JoinTable(name = "message_meetup", joinColumns = @JoinColumn(name = "message_id"), inverseJoinColumns = @JoinColumn(name = "meetup_id"))
-    private Meetup messaged_meetup;
 }

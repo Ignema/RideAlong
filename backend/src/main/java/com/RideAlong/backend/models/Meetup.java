@@ -27,7 +27,8 @@ public class Meetup {
     @Column(name = "gallery", columnDefinition = "TEXT")
     private String gallery;
 
-    @ManyToMany(mappedBy = "meetups")
+    @ManyToMany
+    @JoinTable(name = "participant_meetup", joinColumns = @JoinColumn(name = "meetup_id"), inverseJoinColumns = @JoinColumn(name = "participant_id"))
     @Column(name = "participants")
     private List<Participant> participants;
 
@@ -35,7 +36,8 @@ public class Meetup {
     @JoinTable(name="organizer", joinColumns = @JoinColumn(name = "meetup_id", referencedColumnName = "meetup_id"), inverseJoinColumns = @JoinColumn(name = "participant_id", referencedColumnName = "participant_id"))
     private Participant organizer;
 
-    @OneToMany(mappedBy = "messaged_meetup")
+    @OneToMany
+    @JoinTable(name = "message_meetup", joinColumns = @JoinColumn(name = "meetup_id"), inverseJoinColumns = @JoinColumn(name = "message_id"))
     @Column(name = "messages")
     private List<Message> messages;
 }
