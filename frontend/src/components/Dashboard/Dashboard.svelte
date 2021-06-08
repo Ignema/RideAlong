@@ -9,6 +9,7 @@
 
 	let meetups = []
 	let bicycles = []
+
 	
 	async function getAllMeetups() {
 		const res = await fetch('http://localhost:8080/meetup', {
@@ -65,7 +66,7 @@
                 {/each}
             {:else if currentDashboardOption == 1}
                 {#each bicycles as bicycle}
-                    <BikeRentCard bicycle={bicycle}/>
+                    <BikeRentCard bicycle={bicycle} />
                 {/each}
             {/if}
         </ul>

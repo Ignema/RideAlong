@@ -1,5 +1,10 @@
 <script>
     import './MeetupCard.css'
+    import Modal from '../Modal/Util/Modal.svelte';
+    import Info from '../Modal/Info.svelte';
+	import { writable } from 'svelte/store';
+
+    const modal = writable(null);
 
     export let meetup = {
         "id": "N/A",
@@ -22,11 +27,31 @@
 <li class="dashboard-card">
     <h1 style="font-family: 'Dancing Script'; font-size: 2rem;">Meetup code: {meetup.id}</h1>
     <div class="dashboard-card-info">
-        <p class="dashboard-card-gallery">🔗</p>
-        <p class="dashboard-card-chat">💭</p>
-        <p class="dashboard-card-completed">❓</p>
-        <p class="dashboard-card-location">🪧</p>
-        <p class="dashboard-card-date">📅</p>
+        <p class="dashboard-card-gallery">
+            <Modal show={$modal}>
+                <Info info={meetup.gallery} icon="🔗" />
+            </Modal>
+        </p>
+        <p class="dashboard-card-chat">
+            <Modal show={$modal}>
+                <Info info="coming soon" icon="💭" />
+            </Modal>
+        </p>
+        <p class="dashboard-card-completed">
+            <Modal show={$modal}>
+                <Info info={meetup.completed} icon="❓" />
+            </Modal>
+        </p>
+        <p class="dashboard-card-location">
+            <Modal show={$modal}>
+                <Info info={meetup.location} icon="🪧" />
+            </Modal>
+        </p>
+        <p class="dashboard-card-date">
+            <Modal show={$modal}>
+                <Info info={new Date(meetup.date).toLocaleString()} icon="📅" />
+            </Modal>
+        </p>
     </div>
     <ul class="dashboard-card-participants">
         <li class="dashboard-card-participant-heading">
