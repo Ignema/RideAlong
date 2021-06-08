@@ -2,9 +2,23 @@
     import './BikeRentCard.css'
     import Modal from '../Modal/Util/Modal.svelte';
     import Info from '../Modal/Info.svelte';
+    import { onMount } from 'svelte';
 	import { writable } from 'svelte/store';
 
     const modal = writable(null);
+
+    let isUserOwnerOrRenter = false;
+
+    async function testifUserIsOwnerOrRenter(bicycle_id, user_id) {
+		const res = await fetch('http://localhost:8080/bicycle/'+bicycle_id+'/user/'+user_id, {
+			"method": 'GET',
+            "headers": {
+                "Authorization": "Basic " + btoa("user:1800c92a-e30f-4d8f-9326-7b252407803f")
+            }
+		})
+		isUserOwnerOrRenter = await res.json()
+        console.log("user ", user_id, " + bicycle ", bicycle_id, ":", isUserOwnerOrRenter)
+	}
 
     export let bicycle = {
         "id": "N/A",
@@ -24,6 +38,10 @@
     $: cssVarStyles = Object.entries(styles)
 		.map(([key, value]) => `--${key}:${value}`)
 		.join(';');
+
+    onMount(() => {
+		testifUserIsOwnerOrRenter(bicycle.id, 1)
+	})
 </script>
 
 <li class="dashboard-card dashboard-bike-card" style="{cssVarStyles}">
@@ -55,7 +73,20 @@
             </Modal>
         </p>
     </div>
-    <div class="dashboard-bike-rent">
-        RENT
-    </div>
+    {#if !isUserOwnerOrRenter}
+        <div class="dashboard-bike-rent" on:click={()=>{
+            fetch('http://localhost:8080/bicycle/'+bicycle.id+'/user/'+1, {
+                "method": 'POST',
+                "headers": {
+                    "Authorization": "Basic " + btoa("user:1800c92a-e30f-4d8f-9326-7b252407803f"),
+                    "Content-Type": "application/json"
+                }
+            })
+        }}>
+        <Modal show={$modal}>
+            <Info info={`Call the owner at ${bicycle.owner.phone} to proceed with the rent.`} icon="RENT" />
+        </Modal>
+            
+        </div>
+    {/if}
 </li>

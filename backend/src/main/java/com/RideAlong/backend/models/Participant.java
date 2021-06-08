@@ -30,8 +30,4 @@ public class Participant {
 
     @Column(name = "password", nullable = false, columnDefinition = "TEXT")
     private String password;
-
-    @OneToOne
-    @JoinColumn(name = "bicycle_id")
-    private Bicycle bicycle;
 }

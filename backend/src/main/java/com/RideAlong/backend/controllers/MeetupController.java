@@ -32,9 +32,29 @@ public class MeetupController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "meetup not found");
     }
 
+    @GetMapping("/meetup/user/{id}")
+    public List<Meetup> getUserMeetups(@PathVariable String id) {
+        return meetupDAO.getUserMeetups(Long.parseLong(id));
+    }
+
+    @GetMapping("/meetup/organizer/{id}")
+    public List<Meetup> getUserOrganizedMeetups(@PathVariable String id) {
+        return meetupDAO.getUserOrganizedMeetups(Long.parseLong(id));
+    }
+
+    @GetMapping("/meetup/{meetup_id}/user/{user_id}")
+    public Boolean isUserInThisMeetup(@PathVariable String meetup_id, @PathVariable String user_id) {
+        return meetupDAO.isUserInThisMeetup(Long.parseLong(meetup_id), Long.parseLong(user_id));
+    }
+
     @PostMapping("/meetup")
     public Meetup insertMeetup(@RequestBody Meetup meetup) {
         return meetupDAO.save(meetup);
+    }
+
+    @PostMapping("/meetup/{meetup_id}/user/{user_id}")
+    public Meetup addParticipantToMeetup(@PathVariable String meetup_id, @PathVariable String user_id) {
+        return meetupDAO.addParticipantToMeetup(Long.parseLong(meetup_id), Long.parseLong(user_id));
     }
 
     @PutMapping("/meetup")
