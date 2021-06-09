@@ -1,5 +1,7 @@
 <script>
     import { getContext } from 'svelte';
+    import { token } from '../../../../store.js';
+
     export let message;
     export let hasForm = false;
     export let onCancel = () => {};
@@ -10,7 +12,7 @@
         const res = await fetch('http://localhost:8080/participant/1', {
 			"method": 'GET',
             "headers": {
-                "Authorization": "Basic " + btoa("user:e1d7f81a-ac7a-4fa2-9f2d-9ff0bbb3ee87")
+                "Authorization": "Bearer " + $token
             }
 		})
 
@@ -25,7 +27,7 @@
 		fetch('http://localhost:8080/meetup', {
 			"method": 'POST',
             "headers": {
-                "Authorization": "Basic " + btoa("user:1800c92a-e30f-4d8f-9326-7b252407803f"),
+                "Authorization": "Bearer " + $token,
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(meetup)

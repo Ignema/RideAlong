@@ -6,6 +6,7 @@
     import Schedule from './Modal/Schedule.svelte'
     import Rent from './Modal/Rent.svelte'
     import { writable } from 'svelte/store';
+    import { token, userId } from '../../store.js';
 
     const modal = writable(null);
 
@@ -25,7 +26,7 @@
 		const res = await fetch('http://localhost:8080/meetup', {
 			"method": 'GET',
             "headers": {
-                "Authorization": "Basic " + btoa("user:1800c92a-e30f-4d8f-9326-7b252407803f")
+                "Authorization": "Bearer " + $token
             }
 		})
 		all_meetups = await res.json()
@@ -36,7 +37,7 @@
 		const res = await fetch('http://localhost:8080/meetup/organizer/'+id, {
 			"method": 'GET',
             "headers": {
-                "Authorization": "Basic " + btoa("user:1800c92a-e30f-4d8f-9326-7b252407803f")
+                "Authorization": "Bearer " + $token
             }
 		})
 		organized_meetups = await res.json()
@@ -47,7 +48,7 @@
 		const res = await fetch('http://localhost:8080/meetup/user/'+id, {
 			"method": 'GET',
             "headers": {
-                "Authorization": "Basic " + btoa("user:1800c92a-e30f-4d8f-9326-7b252407803f")
+                "Authorization": "Bearer " + $token
             }
 		})
 		user_meetups = await res.json()
@@ -58,7 +59,7 @@
 		const res = await fetch('http://localhost:8080/bicycle', {
 			"method": 'GET',
             "headers": {
-                "Authorization": "Basic " + btoa("user:e1d7f81a-ac7a-4fa2-9f2d-9ff0bbb3ee87")
+                "Authorization": "Bearer " + $token
             }
 		})
 		all_bicycles = await res.json()
@@ -69,7 +70,7 @@
 		fetch('http://localhost:8080/bicycle/owner/'+id, {
 			"method": 'GET',
             "headers": {
-                "Authorization": "Basic " + btoa("user:e1d7f81a-ac7a-4fa2-9f2d-9ff0bbb3ee87")
+                "Authorization": "Bearer " + $token
             }
 		}).then(async (res)=>{
     		owned_bicycles = await res.json()
@@ -84,7 +85,7 @@
 		fetch('http://localhost:8080/bicycle/user/'+id, {
 			"method": 'GET',
             "headers": {
-                "Authorization": "Basic " + btoa("user:e1d7f81a-ac7a-4fa2-9f2d-9ff0bbb3ee87")
+                "Authorization": "Bearer " + $token
             }
 		}).then(async (res)=>{
     		rented_bicycles = await res.json()
@@ -109,12 +110,12 @@
             }>{dashboardOptions[0]}</li>
             <li on:click={() => {
                     currentDashboardOption = 1
-                    getOrganizedMeetups(1)
+                    getOrganizedMeetups($userId)
                 }
             }>{dashboardOptions[1]}</li>
             <li on:click={() => {
                     currentDashboardOption = 2
-                    getUserMeetups(1)
+                    getUserMeetups($userId)
                 }
             }>{dashboardOptions[2]}</li>
             <li on:click={() => {
@@ -124,12 +125,12 @@
             }>{dashboardOptions[3]}</li>
              <li on:click={() => {
                     currentDashboardOption = 4
-                    getOwnedBicycles(1)
+                    getOwnedBicycles($userId)
                 }
             }>{dashboardOptions[4]}</li>
             <li on:click={() => {
                     currentDashboardOption = 5
-                    getRentedBicycles(1)
+                    getRentedBicycles($userId)
                 }
             }>{dashboardOptions[5]}</li>
         </ul>

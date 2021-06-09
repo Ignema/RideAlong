@@ -4,6 +4,7 @@
     import Info from '../Modal/Info.svelte';
     import { onMount } from 'svelte';
 	import { writable } from 'svelte/store';
+    import { token, userId } from '../../../store.js';
 
     const modal = writable(null);
 
@@ -13,7 +14,7 @@
 		const res = await fetch('http://localhost:8080/bicycle/'+bicycle_id+'/user/'+user_id, {
 			"method": 'GET',
             "headers": {
-                "Authorization": "Basic " + btoa("user:1800c92a-e30f-4d8f-9326-7b252407803f")
+                "Authorization": "Bearer " + $token
             }
 		})
 		isUserOwnerOrRenter = await res.json()
@@ -40,7 +41,7 @@
 		.join(';');
 
     onMount(() => {
-		testifUserIsOwnerOrRenter(bicycle.id, 1)
+		testifUserIsOwnerOrRenter(bicycle.id, $userId)
 	})
 </script>
 
@@ -75,10 +76,10 @@
     </div>
     {#if !isUserOwnerOrRenter}
         <div class="dashboard-bike-rent" on:click={()=>{
-            fetch('http://localhost:8080/bicycle/'+bicycle.id+'/user/'+1, {
+            fetch('http://localhost:8080/bicycle/'+bicycle.id+'/user/'+$userId, {
                 "method": 'POST',
                 "headers": {
-                    "Authorization": "Basic " + btoa("user:1800c92a-e30f-4d8f-9326-7b252407803f"),
+                    "Authorization": "Bearer " + $token,
                     "Content-Type": "application/json"
                 }
             })

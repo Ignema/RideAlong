@@ -4,6 +4,7 @@
     import Info from '../Modal/Info.svelte';
 	import { writable } from 'svelte/store';
     import { onMount } from 'svelte';
+    import { token, userId } from '../../../store.js';
 
     const modal = writable(null);
 
@@ -24,7 +25,7 @@
 		const res = await fetch('http://localhost:8080/meetup/'+meetup_id+'/user/'+user_id, {
 			"method": 'GET',
             "headers": {
-                "Authorization": "Basic " + btoa("user:1800c92a-e30f-4d8f-9326-7b252407803f")
+                "Authorization": "Bearer " + $token
             }
 		})
 		isUserInThisMeetup = await res.json()
@@ -38,7 +39,7 @@
     }
 
     onMount(() => {
-		testifUserInThisMeetup(meetup.id, 1)
+		testifUserInThisMeetup(meetup.id, $userId)
 	})
 </script>
 
@@ -47,10 +48,10 @@
     <div class="dashboard-card-info">
         {#if !isUserInThisMeetup}
             <p class="dashboard-card-join" on:click={()=>{
-                fetch('http://localhost:8080/meetup/'+meetup.id+'/user/'+1, {
+                fetch('http://localhost:8080/meetup/'+meetup.id+'/user/'+$userId, {
                     "method": 'POST',
                     "headers": {
-                        "Authorization": "Basic " + btoa("user:1800c92a-e30f-4d8f-9326-7b252407803f"),
+                        "Authorization": "Bearer " + $token,
                         "Content-Type": "application/json"
                     }
                 }).then(()=>location.reload())
