@@ -42,10 +42,11 @@ public class ParticipantDAO implements DAO<Participant>{
         return participant;
     }
 
-    public Participant getParticipantByEmailAndPassword(String email,String password){
-        Participant participant = participantRepository
-                                    .getParticipantByEmailAndPassword(email,""+password.hashCode());
+    public Participant getParticipantByEmail(String email){
+        return participantRepository.getParticipantByEmail(email);
+    }
 
-        return participant;
+    public Participant getParticipantByEmailAndPassword(String email,String password){
+        return participantRepository.getParticipantByEmailAndPassword(email,""+password.hashCode());
     }
 }
