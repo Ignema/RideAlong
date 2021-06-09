@@ -24,7 +24,8 @@
 </script>
 
 <div class="signup-body">
-    <form class="signup-form" action="/#/login" method="POST">
+    <form class="signup-form" action="/" method="POST">
+        <div class="signup-overlay"></div>
         <label for="name">Name: </label>
         <input type="text" name="name" id="name" bind:value={$user.name}>
         <label for="phone">Phone: </label>
@@ -37,8 +38,7 @@
         <label for="password">Password: </label>
         <input type="password" name="password" id="password" bind:value={$user.password}>
     
-        <input type="submit" on:click={signup}>
+        <input type="submit" value="Sign Up" on:click={signup}>
+        <p>Already have an account? <a href="/#/login">Login</a></p>
     </form>
-
-    <p>{JSON.stringify($user, 0, 2)}</p>
 </div>

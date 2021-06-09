@@ -1,5 +1,88 @@
-/* .login-body {
-    background-color: rgb(53, 52, 52);
+.login-body {
+    background-image: url(https://images.unsplash.com/photo-1545565319-e1b6be69a9a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80);
+    background-size: cover;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form {
+    width: 70%;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+}
+
+.login-overlay {
+    background-color: tomato;
     width: 100%;
-} */
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    border-radius: 1rem;
+    opacity: .3;
+}
+
+.login-form label+input {
+    margin: .5rem;
+    z-index: 1;
+}
+
+.login-form label,
+.login-form p,
+.login-form a {
+    font-family: "Nunito";
+    font-weight: bolder;
+    z-index: 1;
+}
+
+.login-form label {
+    color: white;
+    font-size: 1.6rem;
+}
+
+.login-form p {
+    color: white;
+    font-weight: 100;
+}
+
+.login-form a {
+    color: rgb(231, 196, 37);
+}
+
+.login-form input {
+    width: 80%;
+    margin: 0;
+    border-radius: 15px;
+    outline: none;
+}
+
+.login-form input[type="submit"] {
+    margin: 3rem 0 3rem 1rem;
+    width: 20%;
+    z-index: 1;
+    background-color: transparent;
+    border: solid 5px white;
+    color: white;
+    font-family: "Nunito";
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
+.login-form input[type="submit"]:hover {
+    background-color: white;
+    color: tomato;
+}
+
+.login-form input[type="submit"]:active {
+    background-color: tomato;
+    border: none;
+    color: white;
+}

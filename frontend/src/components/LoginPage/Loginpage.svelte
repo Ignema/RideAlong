@@ -30,15 +30,15 @@
 </script>
 
 <div class="login-body">
-    <form class="login-form" onsubmit="return false">
+    <form class="login-form">
+        <div class="login-overlay"></div>
         <label for="email">Email: </label>
         <input type="email" name="email" id="email" bind:value={$user.email}>
         
         <label for="password">Password: </label>
         <input type="password" name="password" id="password" bind:value={$user.password}>
     
-        <input type="submit" on:click={login}>
-    </form>
-    
-    <p>{JSON.stringify($user, 0, 2)}</p>
+        <input type="submit" value="Login" on:click={login}>
+        <p>Don't have an account? <a href="/#/signup">Sign Up</a></p>
+    </form>    
 </div>
