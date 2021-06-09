@@ -8,8 +8,6 @@ services:
         ports: 
             - 5000:5000
         container_name: ridealong_frontend
-        depends_on:
-            - backend
     backend:
         image: 'backend:latest'
         build:
@@ -24,8 +22,8 @@ services:
             - SPRING_DATASOURCE_USERNAME=ridealong
             # Make sure to change this in prod!!
             - SPRING_DATASOURCE_PASSWORD=12345
+            - SPRING_JPA_HIBERNATE_DDL_AUTO=create-drop # Needs to be set to 'update' in prod
             ###################################
-            - SPRING_JPA_HIBERNATE_DDL_AUTO=update
           
     db:
         image: 'postgres:13.1-alpine'
