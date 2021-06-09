@@ -32,9 +32,29 @@ public class BicycleController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "bicycle not found");
     }
 
+    @GetMapping("/bicycle/user/{id}")
+    public List<Bicycle> getUserBicycles(@PathVariable String id) {
+        return bicycleDAO.getUserBicycles(Long.parseLong(id));
+    }
+
+    @GetMapping("/bicycle/owner/{id}")
+    public List<Bicycle> getUserOrganizedBicycles(@PathVariable String id) {
+        return bicycleDAO.getUserOwnedBicycles(Long.parseLong(id));
+    }
+
+    @GetMapping("/bicycle/{bicycle_id}/user/{user_id}")
+    public Boolean isUseOwnerOrRenter(@PathVariable String bicycle_id, @PathVariable String user_id) {
+        return bicycleDAO.isUseOwnerOrRenter(Long.parseLong(bicycle_id), Long.parseLong(user_id));
+    }
+
     @PostMapping("/bicycle")
     public Bicycle insertBicycle(@RequestBody Bicycle bicycle) {
         return bicycleDAO.save(bicycle);
+    }
+
+    @PostMapping("/bicycle/{bicycle_id}/user/{user_id}")
+    public Bicycle rentBicycle(@PathVariable String bicycle_id, @PathVariable String user_id) {
+        return bicycleDAO.rentBicycle(Long.parseLong(bicycle_id), Long.parseLong(user_id));
     }
 
     @PutMapping("/bicycle")

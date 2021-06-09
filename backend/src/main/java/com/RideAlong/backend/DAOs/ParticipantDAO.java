@@ -41,4 +41,12 @@ public class ParticipantDAO implements DAO<Participant>{
         this.participantRepository.delete(participant);
         return participant;
     }
+
+    public Participant getParticipantByEmail(String email){
+        return participantRepository.getParticipantByEmail(email);
+    }
+
+    public Participant getParticipantByEmailAndPassword(String email,String password){
+        return participantRepository.getParticipantByEmailAndPassword(email,""+password.hashCode());
+    }
 }

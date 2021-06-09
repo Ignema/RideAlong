@@ -1,2 +1,4 @@
-package com.RideAlong.backend.controllers;public class AuthController {
+package com.RideAlong.backend.controllers;
+
+public class AuthController {
 }

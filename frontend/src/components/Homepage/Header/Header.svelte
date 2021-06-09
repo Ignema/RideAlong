@@ -14,8 +14,8 @@
         <h3 class="header-h3">Cycling Together</h3>
         <p class="header-p">Riding bicycles is a lot more fun with others. Discover how you can be part of our community.</p>
         <br>
-        <button class="main-button">MEET UP</button>
-        <button>RENT A BICYCLE</button>
-        <button>LEARN MORE</button>
+        <a href="#/login"><button class="main-button">MEET UP</button></a>
+        <a href="#/login"><button>RENT A BICYCLE</button></a>
+        <a href="#/about"><button>LEARN MORE</button></a>
 	</div>
 </header>
