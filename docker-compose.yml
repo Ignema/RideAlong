@@ -2,14 +2,14 @@ version: '2'
 
 services:
     frontend:
-        image: 'ridealong-frontend:latest'
+        image: 'ignema/ridealong-frontend:1.0'
         build: 
             context: ./frontend/
         ports: 
             - 5000:5000
         container_name: ridealong_frontend
     backend:
-        image: 'backend:latest'
+        image: 'ignema/ridealong-backend:1.0'
         build:
             context: ./backend/
         ports: 
