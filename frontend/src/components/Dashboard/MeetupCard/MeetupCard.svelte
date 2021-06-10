@@ -43,7 +43,7 @@
 	})
 </script>
 
-<li class="dashboard-card">
+<li class="dashboard-card dashboard-card-meetup">
     <h1 style="font-family: 'Dancing Script'; font-size: 2rem;">Meetup code: {meetup.id}</h1>
     <div class="dashboard-card-info">
         {#if !isUserInThisMeetup}

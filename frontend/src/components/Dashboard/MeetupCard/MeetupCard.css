@@ -13,6 +13,10 @@ li.dashboard-card {
     overflow: hidden;
 }
 
+li.dashboard-card-meetup {
+    padding: 4rem 0 0 0;
+}
+
 li.dashboard-card h1 {
     margin: 1rem;
     position: absolute;
@@ -38,7 +42,6 @@ li.dashboard-card h1 {
 
 .dashboard-card-participants {
     list-style-type: none;
-    margin: 4rem 0 0 0;
     padding: 1rem;
     overflow-y: scroll;
     height: 100%;
