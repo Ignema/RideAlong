@@ -33,7 +33,17 @@ There are three things that need to be running in order to execute the whole app
 
 ### Running the project with containers
 
-If you want to use docker, you can simply run this command
+If you want to run the containers seperately then you can pull them independently like so
+    
+    # Frontend
+    docker pull docker.pkg.github.com/ignema/ridealong/frontend:1.0
+
+    # Backend
+    docker pull docker.pkg.github.com/ignema/ridealong/backend:1.0
+
+    # Don't forget to run a postgres container as well!!!
+
+If you want to run the cluster at once, you can simply run this command
 
     docker-compose -p ridealong up
 
