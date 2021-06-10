@@ -11,20 +11,20 @@
     })
 
     async function signup() {
+        console.log($user)
         fetch('http://localhost:8080/signup', {
             "method": 'POST',
             "headers": {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify($user)
-        })
-        console.log($user)
+        }).then(()=>window.location.href = '/')
     }
     
 </script>
 
 <div class="signup-body">
-    <form class="signup-form" action="/" method="POST">
+    <form class="signup-form" onsubmit="return false">
         <div class="signup-overlay"></div>
         <label for="name">Name: </label>
         <input type="text" name="name" id="name" bind:value={$user.name}>

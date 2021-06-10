@@ -30,7 +30,7 @@
 </script>
 
 <div class="login-body">
-    <form class="login-form">
+    <form class="login-form" onsubmit="return false">
         <div class="login-overlay"></div>
         <label for="email">Email: </label>
         <input type="email" name="email" id="email" bind:value={$user.email}>
