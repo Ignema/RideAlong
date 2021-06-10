@@ -19,6 +19,8 @@
         .then(res => res.text())
         .then(payload => JSON.parse(payload))
         .then(payload => {
+            localStorage.setItem("token", payload.jwt)
+            localStorage.setItem("userId", payload.userId)
             token.set(payload.jwt)
             userId.set(payload.userId)
             console.log(payload)

@@ -1,6 +1,6 @@
 <script>
     import { getContext } from 'svelte';
-    import { token } from '../../../../store.js';
+    import { token, userId } from '../../../../store.js';
 
     export let message;
     export let hasForm = false;
@@ -9,7 +9,7 @@
     const { close } = getContext('simple-modal');
 
      async function rent(model, image, price, duration) {
-        const res = await fetch('http://localhost:8080/participant/1', {
+        const res = await fetch('http://localhost:8080/participant/'+$userId, {
 			"method": 'GET',
             "headers": {
                 "Authorization": "Bearer " + $token
