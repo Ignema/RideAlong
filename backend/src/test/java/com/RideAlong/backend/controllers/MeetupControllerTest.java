@@ -33,14 +33,14 @@ class MeetupControllerTest {
     MeetupDAO meetupDAO;
 
     @Test
-    void getMessagesTest()throws Exception {
+    void getMeetupTest()throws Exception {
         mvc.perform(get("/meetup").contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
 
     }
 
     @Test
-    void getMessageByIdTest()throws Exception {
+    void getMeetupByIdTest()throws Exception {
         mvc.perform(get("/meetup/{id}",1).contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
@@ -52,7 +52,7 @@ class MeetupControllerTest {
     }
 
     @Test
-    void addMessageTest()throws Exception {
+    void addMeetupTest()throws Exception {
 
         Meetup meetup = new Meetup();
         meetup.setDate(LocalDateTime.now());
@@ -71,7 +71,7 @@ class MeetupControllerTest {
     }
 
     @Test
-    void updateMessageTest()throws Exception {
+    void updateMeetupTest()throws Exception {
 
         Meetup meetup = new Meetup();
         meetup.setDate(LocalDateTime.now());
